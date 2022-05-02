@@ -8,7 +8,7 @@ public class OD {
         int op;
         int [] vector = randomVector();
         do {
-            System.out.println("1 - Insertion Sort");
+            System.out.println("\n1 - Insertion Sort");
             System.out.println("2 - Bubble Sort");
             System.out.println("3 - Shell Sort");
             System.out.println("0 - Encerrar o programa");
@@ -16,22 +16,31 @@ public class OD {
 
             switch (op) {
                 case 1:
+                    long start1 = System.currentTimeMillis();
                     insertionSort(vector);
                     printVector(vector);
-                    exeTime();
+                    long end1 = System.currentTimeMillis();
+                    System.out.println("Tempo total de execução em milissegundos " + (end1 - start1));
                     break;
 
                 case 2:
+                    long start2 = System.currentTimeMillis();
                     bubbleSort(vector);
                     printVector(vector);
-                    exeTime();
+                    long end2 = System.currentTimeMillis();
+                    System.out.println("Tempo total de execução em milissegundos " + (end2 - start2));
                     break;
 
                 case 3:
+                    long start3 = System.currentTimeMillis();
                     shellSort(vector);
                     printVector(vector);
-                    exeTime();
+                    long end3 = System.currentTimeMillis();
+                    System.out.println("Tempo total de execução em milissegundos " + (end3 - start3));
                     break;
+
+                case 0:
+                    System.exit(0);
             }
         }while(op !=0);
 
@@ -105,12 +114,5 @@ public class OD {
         for (int i = 0; i < vector.length; i++){
             System.out.println(vector[i]);
         }
-    }
-
-    public static void exeTime(){
-        double endTime = System.nanoTime();
-        double startTime = System.nanoTime();
-        double runTime = Math.abs((endTime - startTime) / 1000000000);
-        System.out.printf("\nDuração da execução do vetor: %.2f", runTime);
     }
 }
