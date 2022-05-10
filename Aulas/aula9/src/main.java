@@ -14,7 +14,6 @@ public class main {
             System.out.println("4. PARA EXIBIR O PRIMEIRO ELEMENTO DA LISTA");
             System.out.println("5. PARA EXIBIR O ULTIMO ELEMENTO DA LISTA");
             System.out.println("6. PARA REMOVER O ULTIMO ELEMENTO DA LISTA");
-            System.out.println("6. PARA REMOVER O ULTIMO ELEMENTO DA LISTA");
             System.out.println("7. PARA REMOVER O PRIMEIRO ELEMENTO DA LISTA");
             System.out.println("8. PARA REMOVER UMA POSIÇÃO DA LISTA");
             System.out.println("9. PARA REMOVER UM VALOR DA LISTA");
@@ -61,6 +60,25 @@ public class main {
                 case 7:{
                     if(!numeros.delInicio())
                         System.out.println("Lista vazia");
+                    break;
+                }
+                case 8:{
+                    System.out.println("Digte a posição que deseja remover");
+                    int value4 = tc.nextInt();
+                    System.out.println(numeros.removerPos(value4));
+                }
+                case 9:{
+                    System.out.println("Digite o valor que deseja remover");
+                    int value3 = tc.nextInt();
+                    System.out.println(numeros.removerVal(value3));
+                    break;
+                }
+                case 10:{
+                    System.out.println("Digite o elemento que deseja buscar");
+                    int value2 = tc.nextInt();
+                    int pos = numeros.buscar(value2);
+                    if(pos != -1)
+                        System.out.println("O Elemento está na posição: " + pos);
                 }
             }
 

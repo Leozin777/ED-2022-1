@@ -117,7 +117,50 @@ public class Lista {
             return false;
         }
     }
-
-
+    public int buscar(int b){
+        int pos = -1;
+        if(inicio != null){
+            Elemento aux = inicio;
+            while(aux.prox != null){
+                pos++;
+                if (aux.dado == b){
+                    return pos;
+                }
+                aux = aux.prox;
+            }
+            return -1;
+        }else{
+            return -1;
+        }
+    }
+    public boolean removerVal(int v){
+        int p = buscar(v);
+        return removerPos(p);
+    }
+    public boolean removerPos(int p) {
+        if (p > quantidade)
+            return false;
+        else {
+            if (p == -1)
+                return false;
+            else {
+                if (p == 0)
+                    return delInicio();
+                else if (p == quantidade - 1)
+                    return delFim();
+                else {
+                    Elemento aux = inicio;
+                    Elemento ant = inicio;
+                    for (int i = 0; i < p; i++) {
+                        ant = aux;
+                        aux = aux.prox;
+                    }
+                    ant.prox = aux.prox;
+                    quantidade--;
+                    return true;
+                }
+            }
+        }
+    }
 
 }
