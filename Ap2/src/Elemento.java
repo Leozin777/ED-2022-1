@@ -1,8 +1,8 @@
 public class Elemento {
-    int dado;
+    String dado;
     Elemento prox;
 
-    public Elemento(int value){
+    public Elemento(String value){
         dado = value;
     }
 
